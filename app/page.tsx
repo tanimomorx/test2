@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, Building2, Heart, Home, Wrench, UserCheck, Factory, FileText, Target, Eye, Shield } from 'lucide-react';
+import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, Building2, Heart, Hop as Home, Wrench, UserCheck, Factory, FileText, Target, Eye, Shield } from 'lucide-react';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
