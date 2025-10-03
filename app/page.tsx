@@ -1,7 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, Building2, Heart, Hop as Home, Wrench, UserCheck, Factory, FileText } from 'lucide-react'MenuOpen] = useState(false);
+import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, Building2, Heart, Home, Wrench, UserCheck, Factory, FileText, Target, Eye, Shield } from 'lucide-react';
+
+export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
@@ -49,6 +52,7 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
                 {[
                   { id: 'hero', label: 'Home' },
                   { id: 'about', label: 'About' },
+                  { id: 'mission', label: 'Our Mission' },
                   { id: 'services', label: 'Services' },
                   { id: 'testimonials', label: 'Success Stories' },
                   { id: 'contact', label: 'Contact' }
@@ -58,8 +62,8 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
                     onClick={() => scrollToSection(item.id)}
                     className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                       activeSection === item.id
-                        ? 'text-gold-600 border-b-2 border-gold-600'
-                        : 'text-gray-700 hover:text-gold-600'
+                        ? 'text-green-600 border-b-2 border-green-600'
+                        : 'text-gray-700 hover:text-green-600'
                     }`}
                   >
                     {item.label}
@@ -72,7 +76,7 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-gold-600 transition-colors"
+                className="text-gray-700 hover:text-green-600 transition-colors"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -87,6 +91,7 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
               {[
                 { id: 'hero', label: 'Home' },
                 { id: 'about', label: 'About' },
+                { id: 'mission', label: 'Our Mission' },
                 { id: 'services', label: 'Services' },
                 { id: 'testimonials', label: 'Success Stories' },
                 { id: 'contact', label: 'Contact' }
@@ -94,7 +99,7 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-gold-600 hover:bg-gray-50 transition-colors"
+                  className="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-green-600 hover:bg-gray-50 transition-colors"
                 >
                   {item.label}
                 </button>
@@ -109,25 +114,50 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop")'
+            backgroundImage: 'linear-gradient(135deg, rgba(34, 197, 94, 0.9) 0%, rgba(22, 163, 74, 0.9) 50%, rgba(21, 128, 61, 0.9) 100%), url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop")'
           }}
         />
         
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in-up">
-            Empowering Talent,
-            <span className="block text-gold-400">Delivering Success</span>
-            <span className="block">Worldwide</span>
+            <span className="block">THE GAZIPUR AIR</span>
+            <span className="block bg-gradient-to-r from-green-300 to-green-100 bg-clip-text text-transparent">
+              INTERNATIONAL
+            </span>
+            <span className="block text-3xl md:text-4xl mt-4 font-medium">
+              Skilled Workforce Solutions
+            </span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 animate-fade-in-up animation-delay-300">
-            We train exceptional professionals and connect them with global opportunities
+            Training exceptional professionals and connecting them with global opportunities since 2002
           </p>
           <button
             onClick={() => scrollToSection('contact')}
-            className="bg-gold-600 hover:bg-gold-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 animate-fade-in-up animation-delay-600"
+            className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 animate-fade-in-up animation-delay-600 mr-4"
           >
-            Get Started Today
+            Get Started Today 🚀
           </button>
+          <button
+            onClick={() => scrollToSection('about')}
+            className="border-2 border-green-300 text-green-100 hover:bg-green-600 hover:border-green-600 px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 animate-fade-in-up animation-delay-600"
+          >
+            Learn More 📖
+          </button>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="text-center animate-fade-in-up animation-delay-300">
+              <div className="text-4xl font-bold text-green-200 mb-2">20+</div>
+              <div className="text-gray-200">Years Experience</div>
+            </div>
+            <div className="text-center animate-fade-in-up animation-delay-600">
+              <div className="text-4xl font-bold text-green-200 mb-2">7</div>
+              <div className="text-gray-200">Specialized Sectors</div>
+            </div>
+            <div className="text-center animate-fade-in-up animation-delay-900">
+              <div className="text-4xl font-bold text-green-200 mb-2">1000+</div>
+              <div className="text-gray-200">Successful Placements</div>
+            </div>
+          </div>
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -141,43 +171,43 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-6">
-                About GlobalTalent
+                About THE GAZIPUR AIR INTERNATIONAL
               </h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                With over a decade of experience in international recruitment, we specialize in 
-                training talented individuals and connecting them with prestigious opportunities 
-                across the globe. Our comprehensive approach ensures that every candidate is 
-                fully prepared for success in their new role.
+                THE GAZIPUR AIR INTERNATIONAL is a trusted provider of skilled and unskilled 
+                workforce solutions, operating since 2002. We have established a comprehensive 
+                training institute in Bangladesh to skill people and ensure they meet international 
+                standards.
               </p>
               
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-gold-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy-900">Our Mission</h3>
-                    <p className="text-gray-700">To bridge the gap between exceptional talent and global opportunities through comprehensive training and personalized placement services.</p>
+                    <h3 className="font-semibold text-navy-900">Our Expertise</h3>
+                    <p className="text-gray-700">Specializing in IT, Health, Housekeeping, Construction, Elder Care, Production, and Administration sectors.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-gold-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy-900">Our Vision</h3>
-                    <p className="text-gray-700">To be the world's leading recruiting agency, known for excellence in training and international job placement.</p>
+                    <h3 className="font-semibold text-navy-900">Quality Assurance</h3>
+                    <p className="text-gray-700">Each candidate is thoroughly vetted and qualified to meet your specific requirements.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-gold-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy-900">Our Values</h3>
-                    <p className="text-gray-700">Integrity, excellence, and commitment to transforming lives through meaningful career opportunities.</p>
+                    <h3 className="font-semibold text-navy-900">Flexible Solutions</h3>
+                    <p className="text-gray-700">Whether you need temporary staff, long-term placements, or specialized talent, we deliver.</p>
                   </div>
                 </div>
               </div>
@@ -194,8 +224,142 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
         </div>
       </section>
 
+      {/* Mission, Vision, Values Sections */}
+      <section id="mission" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mission Section - Text Left, Image Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="animate-fade-in-left">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <Target className="w-6 h-6 text-green-600" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-navy-900">
+                  Our Mission
+                </h2>
+              </div>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                To bridge the gap between skilled professionals and global opportunities by providing 
+                comprehensive training and workforce solutions. We are committed to empowering individuals 
+                with the skills and knowledge needed to succeed in international markets while helping 
+                organizations find the perfect talent to meet their specific requirements.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Excellence in training and development</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Global workforce solutions</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Sustainable career development</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="animate-fade-in-right">
+              <img
+                src="https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Welding professional at work"
+                className="rounded-lg shadow-2xl w-full h-96 object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Vision Section - Image Left, Text Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="animate-fade-in-left order-2 lg:order-1">
+              <img
+                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Healthcare professional"
+                className="rounded-lg shadow-2xl w-full h-96 object-cover"
+              />
+            </div>
+            
+            <div className="animate-fade-in-right order-1 lg:order-2">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <Eye className="w-6 h-6 text-green-600" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-navy-900">
+                  Our Vision
+                </h2>
+              </div>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                To become the world's most trusted and innovative workforce solutions provider, 
+                recognized for transforming lives through quality training and international job 
+                placement. We envision a future where skilled professionals from Bangladesh contribute 
+                significantly to global industries while achieving their career aspirations.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Global recognition and trust</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Innovation in workforce solutions</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Transforming lives worldwide</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Values Section - Text Left, Image Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in-left">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <Shield className="w-6 h-6 text-green-600" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-navy-900">
+                  Our Values
+                </h2>
+              </div>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Our core values guide everything we do, from training our candidates to serving our 
+                clients. These principles ensure we maintain the highest standards of integrity, 
+                excellence, and commitment in all our workforce solutions.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-navy-900 mb-2">🎯 Excellence</h4>
+                  <p className="text-sm text-gray-700">Striving for the highest quality in training and service delivery</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-navy-900 mb-2">🤝 Integrity</h4>
+                  <p className="text-sm text-gray-700">Honest, transparent, and ethical business practices</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-navy-900 mb-2">💪 Commitment</h4>
+                  <p className="text-sm text-gray-700">Dedicated to our candidates' and clients' success</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-navy-900 mb-2">🌍 Innovation</h4>
+                  <p className="text-sm text-gray-700">Continuously improving our methods and services</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="animate-fade-in-right">
+              <img
+                src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Construction worker"
+                className="rounded-lg shadow-2xl w-full h-96 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-navy-900 mb-4 animate-fade-in-up">
@@ -208,8 +372,8 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up">
-              <div className="w-16 h-16 bg-gold-100 rounded-lg flex items-center justify-center mb-6">
-                <Users className="w-8 h-8 text-gold-600" />
+              <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                <Users className="w-8 h-8 text-green-600" />
               </div>
               <h3 className="text-2xl font-bold text-navy-900 mb-4">Training Programs</h3>
               <p className="text-gray-700 leading-relaxed">
@@ -220,8 +384,8 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
             </div>
 
             <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-300">
-              <div className="w-16 h-16 bg-gold-100 rounded-lg flex items-center justify-center mb-6">
-                <Globe className="w-8 h-8 text-gold-600" />
+              <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                <Globe className="w-8 h-8 text-green-600" />
               </div>
               <h3 className="text-2xl font-bold text-navy-900 mb-4">International Job Placement</h3>
               <p className="text-gray-700 leading-relaxed">
@@ -232,8 +396,8 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
             </div>
 
             <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-fade-in-up animation-delay-600">
-              <div className="w-16 h-16 bg-gold-100 rounded-lg flex items-center justify-center mb-6">
-                <Award className="w-8 h-8 text-gold-600" />
+              <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                <Award className="w-8 h-8 text-green-600" />
               </div>
               <h3 className="text-2xl font-bold text-navy-900 mb-4">Career Counseling</h3>
               <p className="text-gray-700 leading-relaxed">
@@ -261,21 +425,22 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
             <div className="bg-white rounded-xl p-8 shadow-lg animate-fade-in-up">
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-gold-500 fill-current" />
+                  <Star key={i} className="w-5 h-5 text-green-500 fill-current" />
                 ))}
               </div>
               <p className="text-gray-700 mb-6 italic">
-                "GlobalTalent transformed my career completely. Their training program prepared me 
-                perfectly for my role in Germany. The support throughout the process was exceptional."
+                "THE GAZIPUR AIR INTERNATIONAL transformed my career completely. Their training 
+                program prepared me perfectly for my IT role in Germany. The support throughout 
+                the process was exceptional."
               </p>
               <div className="flex items-center">
                 <img
                   src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-                  alt="Sarah Johnson"
+                  alt="Rahman Ahmed"
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h4 className="font-semibold text-navy-900">Sarah Johnson</h4>
+                  <h4 className="font-semibold text-navy-900">Rahman Ahmed</h4>
                   <p className="text-gray-600 text-sm">Software Engineer, Germany</p>
                 </div>
               </div>
@@ -284,21 +449,21 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
             <div className="bg-white rounded-xl p-8 shadow-lg animate-fade-in-up animation-delay-300">
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-gold-500 fill-current" />
+                  <Star key={i} className="w-5 h-5 text-green-500 fill-current" />
                 ))}
               </div>
               <p className="text-gray-700 mb-6 italic">
-                "Thanks to GlobalTalent, I'm now working as a nurse in Canada. The cultural 
-                orientation and language training made my transition smooth and successful."
+                "Thanks to THE GAZIPUR AIR INTERNATIONAL, I'm now working as a nurse in Canada. 
+                The cultural orientation and language training made my transition smooth and successful."
               </p>
               <div className="flex items-center">
                 <img
                   src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-                  alt="Maria Rodriguez"
+                  alt="Fatima Khatun"
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h4 className="font-semibold text-navy-900">Maria Rodriguez</h4>
+                  <h4 className="font-semibold text-navy-900">Fatima Khatun</h4>
                   <p className="text-gray-600 text-sm">Registered Nurse, Canada</p>
                 </div>
               </div>
@@ -307,21 +472,21 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
             <div className="bg-white rounded-xl p-8 shadow-lg animate-fade-in-up animation-delay-600">
               <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-gold-500 fill-current" />
+                  <Star key={i} className="w-5 h-5 text-green-500 fill-current" />
                 ))}
               </div>
               <p className="text-gray-700 mb-6 italic">
-                "The team at GlobalTalent went above and beyond to help me secure my dream job 
-                in Australia. Their expertise in international recruitment is unmatched."
+                "The team at THE GAZIPUR AIR INTERNATIONAL went above and beyond to help me secure 
+                my dream job in Australia. Their expertise in international recruitment is unmatched."
               </p>
               <div className="flex items-center">
                 <img
                   src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop"
-                  alt="David Chen"
+                  alt="Karim Hassan"
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h4 className="font-semibold text-navy-900">David Chen</h4>
+                  <h4 className="font-semibold text-navy-900">Karim Hassan</h4>
                   <p className="text-gray-600 text-sm">Project Manager, Australia</p>
                 </div>
               </div>
@@ -354,7 +519,7 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
                       type="text"
                       id="name"
                       name="name"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
                       placeholder="Your full name"
                     />
                   </div>
@@ -366,7 +531,7 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
                       type="email"
                       id="email"
                       name="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -380,8 +545,8 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
                     type="tel"
                     id="phone"
                     name="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors"
-                    placeholder="+1 (555) 123-4567"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                    placeholder="+880 1234-567890"
                   />
                 </div>
                 
@@ -393,16 +558,16 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
                     id="message"
                     name="message"
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:border-transparent transition-colors resize-none"
-                    placeholder="Tell us about your career goals and how we can help..."
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors resize-none"
+                    placeholder="Tell us about your workforce needs or career goals..."
                   ></textarea>
                 </div>
                 
                 <button
                   type="submit"
-                  className="w-full bg-gold-600 hover:bg-gold-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-300"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors duration-300"
                 >
-                  Send Message
+                  Send Message 📧
                 </button>
               </form>
             </div>
@@ -410,57 +575,58 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
             <div className="animate-fade-in-right">
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-gold-600" />
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-navy-900 mb-2">Phone</h3>
-                    <p className="text-gray-700">+1 (555) 123-4567</p>
-                    <p className="text-gray-700">+1 (555) 987-6543</p>
+                    <h3 className="text-lg font-semibold text-navy-900 mb-2">Phone / WhatsApp</h3>
+                    <p className="text-gray-700">+8801819251370 (Md. Atikullah Mithu)</p>
+                    <p className="text-gray-700">+880 1990-423908 (Md. Liton)</p>
+                    <p className="text-gray-700">+393428202845 (Marziano Palli - Europe)</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-gold-600" />
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-navy-900 mb-2">Email</h3>
-                    <p className="text-gray-700">info@globaltalent.com</p>
-                    <p className="text-gray-700">careers@globaltalent.com</p>
+                    <p className="text-gray-700">mithu@gajipurgroup.com</p>
+                    <p className="text-gray-700">liton@gajipurgroup.com</p>
+                    <p className="text-gray-700">palli@gajpurgroup.com</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gold-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-gold-600" />
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-navy-900 mb-2">Office Address</h3>
                     <p className="text-gray-700">
-                      123 Business District<br />
-                      Suite 456<br />
-                      New York, NY 10001<br />
-                      United States
+                      House#183, Road#02<br />
+                      Baridhara DOHS<br />
+                      Dhaka, Bangladesh
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-12 bg-white rounded-xl shadow-lg p-6">
-                <h3 className="text-lg font-semibold text-navy-900 mb-4">Office Hours</h3>
-                <div className="space-y-2 text-gray-700">
-                  <div className="flex justify-between">
-                    <span>Monday - Friday</span>
-                    <span>9:00 AM - 6:00 PM</span>
+                <h3 className="text-lg font-semibold text-navy-900 mb-4">Interview Options 🎯</h3>
+                <div className="space-y-3 text-gray-700">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                    <span>Online interviews available</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Saturday</span>
-                    <span>10:00 AM - 4:00 PM</span>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                    <span>Face-to-face interviews at our institute</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Sunday</span>
-                    <span>Closed</span>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                    <span>Flexible scheduling available</span>
                   </div>
                 </div>
               </div>
@@ -486,25 +652,31 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
               <div className="space-y-2">
                 <button
                   onClick={() => scrollToSection('about')}
-                  className="block text-gray-300 hover:text-gold-400 transition-colors"
+                  className="block text-gray-300 hover:text-green-400 transition-colors"
                 >
                   About Us
                 </button>
                 <button
+                  onClick={() => scrollToSection('mission')}
+                  className="block text-gray-300 hover:text-green-400 transition-colors"
+                >
+                  Our Mission
+                </button>
+                <button
                   onClick={() => scrollToSection('services')}
-                  className="block text-gray-300 hover:text-gold-400 transition-colors"
+                  className="block text-gray-300 hover:text-green-400 transition-colors"
                 >
                   Services
                 </button>
                 <button
                   onClick={() => scrollToSection('testimonials')}
-                  className="block text-gray-300 hover:text-gold-400 transition-colors"
+                  className="block text-gray-300 hover:text-green-400 transition-colors"
                 >
                   Success Stories
                 </button>
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="block text-gray-300 hover:text-gold-400 transition-colors"
+                  className="block text-gray-300 hover:text-green-400 transition-colors"
                 >
                   Contact
                 </button>
@@ -516,7 +688,7 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gold-600 transition-colors"
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
                 >
                   <span className="sr-only">LinkedIn</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -525,7 +697,7 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gold-600 transition-colors"
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
                 >
                   <span className="sr-only">Facebook</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -534,7 +706,7 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gold-600 transition-colors"
+                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
                 >
                   <span className="sr-only">Instagram</span>
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -547,7 +719,7 @@ import { ChevronDown, Users, Globe, Award, Star, Phone, Mail, MapPin, Menu, X, B
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center">
             <p className="text-gray-400">
-              © 2024 GlobalTalent. All rights reserved. | Privacy Policy | Terms of Service
+              © 2024 THE GAZIPUR AIR INTERNATIONAL. All rights reserved. | Privacy Policy | Terms of Service
             </p>
           </div>
         </div>
