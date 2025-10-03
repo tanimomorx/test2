@@ -53,6 +53,7 @@ export default function Home() {
                   { id: 'hero', label: 'Home' },
                   { id: 'about', label: 'About' },
                   { id: 'mission', label: 'Our Mission' },
+                  { id: 'mission', label: 'Our Mission' },
                   { id: 'services', label: 'Services' },
                   { id: 'testimonials', label: 'Success Stories' },
                   { id: 'contact', label: 'Contact' }
@@ -91,6 +92,7 @@ export default function Home() {
               {[
                 { id: 'hero', label: 'Home' },
                 { id: 'about', label: 'About' },
+                { id: 'mission', label: 'Our Mission' },
                 { id: 'mission', label: 'Our Mission' },
                 { id: 'services', label: 'Services' },
                 { id: 'testimonials', label: 'Success Stories' },
@@ -217,6 +219,140 @@ export default function Home() {
               <img
                 src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
                 alt="Training session"
+                className="rounded-lg shadow-2xl w-full h-96 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission, Vision, Values Sections */}
+      <section id="mission" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Mission Section - Text Left, Image Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="animate-fade-in-left">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <Target className="w-6 h-6 text-green-600" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-navy-900">
+                  Our Mission
+                </h2>
+              </div>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                To bridge the gap between skilled professionals and global opportunities by providing 
+                comprehensive training and workforce solutions. We are committed to empowering individuals 
+                with the skills and knowledge needed to succeed in international markets while helping 
+                organizations find the perfect talent to meet their specific requirements.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Excellence in training and development</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Global workforce solutions</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Sustainable career development</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="animate-fade-in-right">
+              <img
+                src="https://images.pexels.com/photos/5691659/pexels-photo-5691659.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Welding professional at work"
+                className="rounded-lg shadow-2xl w-full h-96 object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Vision Section - Image Left, Text Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
+            <div className="animate-fade-in-left order-2 lg:order-1">
+              <img
+                src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Healthcare professional"
+                className="rounded-lg shadow-2xl w-full h-96 object-cover"
+              />
+            </div>
+            
+            <div className="animate-fade-in-right order-1 lg:order-2">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <Eye className="w-6 h-6 text-green-600" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-navy-900">
+                  Our Vision
+                </h2>
+              </div>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                To become the world's most trusted and innovative workforce solutions provider, 
+                recognized for transforming lives through quality training and international job 
+                placement. We envision a future where skilled professionals from Bangladesh contribute 
+                significantly to global industries while achieving their career aspirations.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Global recognition and trust</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Innovation in workforce solutions</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  <span className="text-gray-700">Transforming lives worldwide</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Values Section - Text Left, Image Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in-left">
+              <div className="flex items-center mb-6">
+                <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <Shield className="w-6 h-6 text-green-600" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-navy-900">
+                  Our Values
+                </h2>
+              </div>
+              <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                Our core values guide everything we do, from training our candidates to serving our 
+                clients. These principles ensure we maintain the highest standards of integrity, 
+                excellence, and commitment in all our workforce solutions.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-navy-900 mb-2">🎯 Excellence</h4>
+                  <p className="text-sm text-gray-700">Striving for the highest quality in training and service delivery</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-navy-900 mb-2">🤝 Integrity</h4>
+                  <p className="text-sm text-gray-700">Honest, transparent, and ethical business practices</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-navy-900 mb-2">💪 Commitment</h4>
+                  <p className="text-sm text-gray-700">Dedicated to our candidates' and clients' success</p>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-navy-900 mb-2">🌍 Innovation</h4>
+                  <p className="text-sm text-gray-700">Continuously improving our methods and services</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="animate-fade-in-right">
+              <img
+                src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                alt="Construction worker"
                 className="rounded-lg shadow-2xl w-full h-96 object-cover"
               />
             </div>
