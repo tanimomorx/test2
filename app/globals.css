@@ -95,19 +95,19 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4af37;
+  background: #059669;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8941f;
+  background: #047857;
 }
 
 /* Focus styles for accessibility */
 button:focus,
 input:focus,
 textarea:focus {
-  outline: 2px solid #d4af37;
+  outline: 2px solid #059669;
   outline-offset: 2px;
 }
 
